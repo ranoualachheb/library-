@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta charset="utf-8">
+	<title>library for readers</title>
+	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
+	<style>
+		body {
+  background-image: url('library image.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+		.monospace {
+			font-family: courier new ;
+			color: white;
+			font-size: 48px;
+			font-style: italic;
+
+		} 
+		.larger-img {
+			width: 50px;
+			margin-bottom:4%;
+		}
+		#books{
+			height: 100px;
+            width: 200px;
+            position: absolute;
+            left: 85%;
+            margin-left: -40px;
+            top: 20%;
+            margin-top: -50px;
+		}
+		#tool{
+			font-family: ariel ;
+			color: white;
+			font-size: 15px;
+			font-style: italic;
+			margin-left: 20px;
+		}
+		#inputName{
+			margin-left: 10px;
+		}
+
+		#stars{
+			margin-top: -350px; 
+			height:350px; 
+			margin-left: -50px;
+		}
+		#eyes{
+		height:350px;
+		width: 225px;
+		margin-left: 45px;	
+	    }  
+		#anna{
+        margin-top: -350px; 
+		height:350px; 
+		margin-left: -50px;
+	   }
+	    #plato{
+        height:350px;
+		width: 225px;
+		margin-left: 45px;
+		}
+        #shakespeare{
+        height:330px; 
+        }
+        #fairy{
+        margin-top: -350px; 
+		height:345px; 
+	    margin-left: -45px;
+        }
+        #tragedy{
+        margin-top: -350px; 
+		height:370px; 
+		margin-left: -50px;
+		}
+        #button{
+        	background: none;
+            cursor: pointer;
+            border:none;
+            outline:none;
+            height:40px;
+            width:40px;
+            font-size: 30px;
+        }
+
+	</style>
+	</head>
+	<body>
+		<img class = 'larger-img'src='https://clipartart.com/images/library-management-system-logo-clipart-6.png' align= 'left' alt = 'library logo'><h1 class='monospace'>Bookie World</h1>
+		<div id='books' >
+			<h1 id='tool'>Your Search Tool ❤</h1>
+	<br>
+  	<input id='inputName' type='text' value = '' placeholder="search book genre"><br><br>
+    <center><button id='button' type='button'><i class="fas fa-search-plus"></i></button></center></center>
+  	</div>
+  	<div id= container></div>
+    <div id=container2></div>
+<script>
+	var counter=0
+ $("#button").click(function(){
+  var genre = $("#inputName").val();
+    if((counter%2===0) && (genre === 'romantic')){
+       $('#container').append('<a href="https://novels77.com/twilight/page-1-10015665.html"><img id=" twilight" src="https://upload.wikimedia.org/wikipedia/en/b/b6/Twilight_%282008_film%29_poster.jpg" alt="twilight"></a>')
+       $('#container').append('<center><a href="http://novelfreereadonline.com/the-fault-in-our-stars/page-1-135004"><img id="stars" src="https://assets.whsmith.co.uk/product-image/large/9780141355078-10-000_1.jpg" alt="the fault in our stars"></a></center>')
+       $('#container').append('<a href=""><img id="eyes" src="https://images-na.ssl-images-amazon.com/images/I/81-rAKGs6mL._RI_.jpg" alt="in our eyes"></a>')
+       $('#container').append('<center><a href="http://www.studynovels.com/Page/Story?bookId=1648"><img id="anna" src="https://images-na.ssl-images-amazon.com/images/I/81LpTj-580L.jpg" alt="after"></a></center>')
+       counter++
+    }else if((counter%2 !==0)&&(genre === 'classics')){
+    	$('#container').html('');
+       $('#container2').append('<a href="https://archive.org/stream/edipocoloneotrag00sophuoft?ref=ol#page/n3/mode/2up"><img id="shakespeare" src="https://images-eu.ssl-images-amazon.com/images/I/51vanRiSa0L.jpg" alt="Oedipus"></a>')
+       $('#container2').append('<center><a href="https://archive.org/stream/cu31924084424013?ref=ol#page/n9/mode/2up"><img id="fairy" src="https://images-na.ssl-images-amazon.com/images/I/51bEaMyoIhL._SX331_BO1,204,203,200_.jpg" alt="the red fairy book"></a></center>')
+       $('#container2').append('<a href="https://archive.org/stream/charmideslachesl00plat?ref=ol#page/n3/mode/2up"><img id="plato" src="https://cdn.shopify.com/s/files/1/0736/0537/products/Book0047_cef0855c-bf6b-465d-a9ee-6ba179a03646.jpg?v=1425633346" alt="dialogue of plato"></a>')
+       $('#container2').append('<center><a href="https://archive.org/stream/gamesteratragedy00mooriala?ref=ol#page/n5/mode/2up"><img id="tragedy" src="https://archive.org/services/img/gamestertragedya00moor" alt=" the gamester tragedy"></a></center>')
+       counter--
+    } else if((genre !== 'romantic') ||(genre !== 'classics')) {
+    	$("#container2").html('')
+    	$("#container").html('')
+    	$('body').append('<center><p><b>we are sorry we are still working on providing this genre</b></p></center>')
+        	$('p').fadeOut(3*1000)
+    }else {
+        	$('body').attr('<div id = container></div>');}
+
+})
+ $('#books').css('background-color','pink')
+</script>
+	</body>
+	</html>

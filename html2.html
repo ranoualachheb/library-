@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<link href='html1.html' />
+<head>
+	<title>welcome page</title>
+	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
+	<style>
+body {
+  background-image: url('betterimage.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+#elements {
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+}
+#head{
+	color:pink;
+	font-style: italic;
+	margin-left: -90px;
+	font-size: 50px
+}
+#button{
+	margin-left: -110px;
+  background-color: pink;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-style: italic;
+  border: 3px solid white;
+  border-radius: 25px;
+}
+#welcome1{
+	background-color:coral;
+	font-size: 20px;
+}
+
+	</style>
+	</head>
+	<body>
+				<center>
+	<div id='elements' >
+		<h1 id='head'>login</h1>
+	<br>
+	<i class="fa fa-user" aria-hidden="true"></i>
+  	<input id='inputName' type='text' value = '' placeholder="user name"><br><br>
+  	<input id='inputPass' value = '' type="password" placeholder="Password"><br><br>
+  	
+  	<bold><button id='button' type='button'>Log in</button></bold>
+  	</div>
+  </center>
+  <script>
+
+$("#button").click(function(){
+		var image = $('#image')
+        var name = $("#inputName").val();
+        var pass = $('#inputPass').val();
+        if(name === 'ranoua' && pass === 'bookie1'){
+        	//$('body').html('')
+        	$('#inputName').fadeOut( 300 )
+        	$('#inputPass').fadeOut( 300 )
+        	$("#button").fadeOut( 300 )
+        	$('#elements').html('')
+        	$('#elements').append('<center  id="welcome"><p><strong>Welcome Ranoua!</strong></p></center>')
+        	$('#welcome').fadeOut(3000)
+        	$('#welcome').css('color','white')
+        	$('#elements').append('<div id="welcome1"><b><a href="html1.html">click to continue</a></b></div>').fadeIn(2000)
+        	
+        }
+        else {
+        	$('body').append('<center><div id="color"><p><b>Incorrect, please try again!<b></p></div></center>')
+            $('#color').css('color','white');
+        	$('#color').css('background-color','coral');
+        	$('#color').fadeOut( 2000 )
+        }
+    })
+</script>
+	</body>
+</html>
